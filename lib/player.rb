@@ -8,10 +8,6 @@ class Player
     @health = health
   end
 
-  def attack(player)
-    player.receive_damage
-  end
-
   def receive_damage
     @health -= 10
   end
