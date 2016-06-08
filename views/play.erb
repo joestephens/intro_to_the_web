@@ -1,17 +1,13 @@
+  <div id="attack_box">
+    <img src="http://pokeunlock.com/wp-content/uploads/2015/01/jigglypuff.gif">
+    <%= @player_1.name %> vs. <img src="https://pbs.twimg.com/profile_images/623970327501119488/TfH_1e0H.jpg" width="46" height="46"> <%= @player_2.name %><br>
 
 
 
-
-<div style="width:300px; height: 300px;  position: absolute; top:0; bottom: 0; left: 0; right: 0; margin: auto; border:15px groove #73ad21; padding: 15px;" >
-<img src="http://pokeunlock.com/wp-content/uploads/2015/01/jigglypuff.gif">
-<%= @player_1.name %> vs. <img src="https://pbs.twimg.com/profile_images/623970327501119488/TfH_1e0H.jpg" width="46" height="46"> <%= @player_2.name %><br>
+    <%= @player_2.name %>: <%= @player_2.health %>HP
 
 
-
-<%= @player_2.name %>: <%= @player_2.health %>HP
-
-
-<form action="/attack">
-  <input type="submit" value="Attack">
-</form>
-</div>
+    <form action="/attack">
+      <input type="submit" value="Attack">
+    </form>
+  </div>
