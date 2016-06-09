@@ -20,6 +20,7 @@ class Battle < Sinatra::Base
   get '/play' do
     @player_1 = $game.player_1
     @player_2 = $game.player_2
+    @current_turn = $game.current_turn.name
     erb(:play, :layout => :layout)
   end
 
@@ -27,6 +28,7 @@ class Battle < Sinatra::Base
     @player_1 = $game.player_1
     @player_2 = $game.player_2
     $game.attack(@player_2)
+    $game.switch_turn
     erb(:attack, :layout => :layout)
   end
 
