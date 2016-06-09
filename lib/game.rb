@@ -14,10 +14,6 @@ class Game
     @players.last
   end
 
-  def attack(player)
-    player.receive_damage
-  end
-
   def switch_turn
     @current_turn == player_1 ? @current_turn = player_2 : @current_turn = player_1
   end

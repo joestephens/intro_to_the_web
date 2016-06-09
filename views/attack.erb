@@ -1,3 +1,11 @@
+  <% if @current_turn == @player_1 %>
   <%= @player_1.name %> launches all out assault on <%= @player_2.name %>
+  <% else %>
+  <%= @player_2.name %> launches all out assault on <%= @player_1.name %>
+  <% end %>
   <br>
-  <a href="/play">OK</a>
+  <form action="/switch_turn" method="post">
+    <input type="submit" value="OK">
+  </form>
+
+

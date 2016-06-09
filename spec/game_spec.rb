@@ -24,11 +24,4 @@ describe Game do
       expect(game.current_turn).to eq mittens
     end
   end
-
-  describe '#attack' do
-    it 'damages the player' do
-      expect(mittens).to receive(:receive_damage)
-      game.attack(mittens)
-    end
-  end
 end

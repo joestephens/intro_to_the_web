@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/attack'
 
 class Battle < Sinatra::Base
   enable :sessions
@@ -27,9 +28,14 @@ class Battle < Sinatra::Base
   get '/attack' do
     @player_1 = $game.player_1
     @player_2 = $game.player_2
-    $game.attack(@player_2)
-    $game.switch_turn
+    @current_turn = $game.current_turn
+    Attack.new($game).attack
     erb(:attack, :layout => :layout)
+  end
+
+  post '/switch_turn' do
+    $game.switch_turn
+    redirect to('/play')
   end
 
   run! if app_file == $0
