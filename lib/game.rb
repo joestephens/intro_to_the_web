@@ -25,4 +25,12 @@ class Game
   def game_over?
     (player_1.health <= 0 || player_2.health <= 0) ? true : false
   end
+
+  def self.create(player_1, player_2)
+    @game = new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
+  end
 end
