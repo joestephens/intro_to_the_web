@@ -1,6 +1,24 @@
+@font-face {
+    font-family: "Mortal Kombat";
+    src: url("../fonts/mk1.ttf");
+}
+
+body {
+  background-color: #000;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 75px;
+  height: 5px;
+}
+
 #attack_box {
-  width:300px;
-  height: 300px;
+  background-color: #FFF;
+  font-family: "Mortal Kombat";
+  width: 300px;
+  height: 200px;
   position: absolute;
   top:0;
   bottom: 0;
@@ -9,4 +27,24 @@
   margin: auto;
   border:15px groove #73ad21;
   padding: 15px;
+}
+
+.player {
+  display: block;
+  width: 300px;
+  height: 50px;
+}
+
+.player_1 {
+  float: left;
+  text-align: left;
+  display: inline;
+  width: 75px;
+}
+
+.player_2 {
+  float: right;
+  text-align: right;
+  display: inline;
+  width: 75px;
 }

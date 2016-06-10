@@ -4,7 +4,6 @@ describe Player do
   subject(:dave) { Player.new('Dave') }
   subject(:mittens) { Player.new('Mittens') }
 
-
   describe '#name' do
     it "returns player's name" do
       expect(dave.name).to eq "Dave"
@@ -19,7 +18,8 @@ describe Player do
 
   describe '#receive_damage' do
     it 'reduces the player hp' do
-      expect { mittens.receive_damage }.to change { mittens.health }.by(-10)
+      srand(1234)
+      expect { mittens.receive_damage }.to change { mittens.health }.by(-47)
     end
   end
 end

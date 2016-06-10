@@ -1,11 +1,26 @@
-  <div id="attack_box">
     <p>
-      <img src="http://pokeunlock.com/wp-content/uploads/2015/01/jigglypuff.gif">&#32;
-      <strong><%= @player_1.name %></strong> HP: <%= @player_1.health %>
+      <div class="player">
+        <div class="player_2">
+          <img src="https://pbs.twimg.com/profile_images/623970327501119488/TfH_1e0H.jpg" width="46" height="46">&#32;
+        </div>
+        <div class="player_2">
+          <strong><%= @player_2.name %></strong>
+          <br>
+          <progress id="player_2_hp" value="<%= @player_2.health %>" max="60">
+        </div>
+      </div>
     </p>
     <p>
-      <img src="https://pbs.twimg.com/profile_images/623970327501119488/TfH_1e0H.jpg" width="46" height="46">&#32;
-      <strong><%= @player_2.name %></strong> HP: <%= @player_2.health %>
+      <div class="player">
+        <div class="player_1">
+          <img src="http://pokeunlock.com/wp-content/uploads/2015/01/jigglypuff.gif">&#32;
+        </div>
+        <div class="player_1">
+          <strong><%= @player_1.name %></strong>
+          <br>
+          <progress id="player_1_hp" value="<%= @player_1.health %>" max="60">
+        </div>
+      </div>
     </p>
     <p>
       <form action="/attack">
@@ -15,4 +30,3 @@
     <p>
       <%= @current_turn %>'s turn
     </p>
-  </div>

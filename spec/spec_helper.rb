@@ -8,7 +8,6 @@ require 'capybara/rspec'
 require 'rspec'
 require './spec/features/web_helpers'
 
-
 Capybara.app = Battle
 RSpec.configure do |config|
   config.include Capybara::DSL

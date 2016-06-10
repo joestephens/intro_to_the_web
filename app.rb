@@ -34,8 +34,17 @@ class Battle < Sinatra::Base
   end
 
   post '/switch_turn' do
-    $game.switch_turn
-    redirect to('/play')
+    if $game.game_over?
+      redirect to('/game-over')
+    else
+      $game.switch_turn
+      redirect to('/play')
+    end
+  end
+
+  get '/game-over' do
+    @winner = $game.winner.name
+    erb(:game_over, :layout => :layout)
   end
 
   run! if app_file == $0

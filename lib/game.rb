@@ -18,4 +18,11 @@ class Game
     @current_turn == player_1 ? @current_turn = player_2 : @current_turn = player_1
   end
 
+  def winner
+    player_1.health <= 0 ? player_2 : player_1
+  end
+
+  def game_over?
+    (player_1.health <= 0 || player_2.health <= 0) ? true : false
+  end
 end
